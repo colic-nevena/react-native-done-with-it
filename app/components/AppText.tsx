@@ -3,7 +3,7 @@ import { Platform, Text, StyleSheet } from 'react-native'
 
 interface Props {
     text: string;
-    style: object
+    style?: object
 }
 
 export default function AppText({ text, style }: Props) {

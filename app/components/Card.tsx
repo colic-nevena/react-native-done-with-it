@@ -1,12 +1,12 @@
 import React from 'react'
-import { View, StyleSheet, Image } from 'react-native'
+import { View, StyleSheet, Image, ImageSourcePropType } from 'react-native'
 import colors from '../config/colors'
 import AppText from './AppText';
 
 interface Props {
     title: string;
     subtitle: string;
-    image: string
+    image: ImageSourcePropType
 }
 
 export default function Card({ title, subtitle, image }: Props) {
