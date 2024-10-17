@@ -1,21 +1,39 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import Card from "./components/Card";
-import ListingScreen from "./screens/ListingScreen";
-import MessagesScreen from "./screens/MessagesScreen";
-import ViewImageScreen from "./screens/ViewImageScreen";
-import WelcomeScreen from "./screens/WelcomeScreen";
-import Icon from "./components/Icon";
+import { useState } from "react";
+import AppPicker from "./components/AppPicker";
+import { PickerItemProps } from './components/AppPicker';
+
+const categories: PickerItemProps[] = [
+  {
+    label: "Furniture",
+    value: 1
+  },
+  {
+    label: "Clothing",
+    value: 2
+  },
+  {
+    label: "Cameras",
+    value: 3
+  }
+]
 
 
 export default function Index() {
+  const [category, setCategory] = useState<PickerItemProps | undefined>();
+
+  const handleSelectItem = (item: PickerItemProps) => {
+    setCategory(item)
+  }
+
   return (
-    <SafeAreaView>
-      <Icon
-        name="email"
-        size={50}
-        backgroundColor="red"
-        iconColor="white"
-      />
+    <SafeAreaView style={{ backgroundColor: "white", flex: 1 }}>
+      <AppPicker
+        selectedItem={category}
+        onSelectItem={handleSelectItem}
+        placeholder="Category"
+        icon="menu"
+        items={categories} />
     </SafeAreaView>
   );
 }

@@ -4,6 +4,8 @@ interface Colors {
     black: string;
     white: string;
     lightGrey: string;
+    light: string;
+    darkGrey: string;
     danger: string;
 }
 
@@ -13,7 +15,9 @@ const colors: Colors = {
     black: "#000",
     white: "#fff",
     lightGrey: "#6e6969",
-    danger: "#ff5252"
+    light: "#f8f4f4",
+    darkGrey: "#0c0c0c",
+    danger: "#ff5252",
 }
 
 export default colors
